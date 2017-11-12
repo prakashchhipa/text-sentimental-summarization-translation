@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ReWordifying India - From Frustration...  ...to understanding</title>
+
+
+   
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      
+   
+
+   
+</head>
+
+    <body>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/hero-slider-main.js"></script>
+		<script lang="javascript">
+		
+		$(document).ready(function(){
+		$('#btn').click(function(){ 
+		
+		 $.ajax({
+		 method:'GET',
+		 url: "http://40.76.206.209:8080/text/" + document.getElementById("txtspeech").value, 
+		 crossDomain:true,
+		 success: function(result){
+		 
+		    var p = result['response'].split(":");
+			//alert(p[1]);
+			document.getElementById("txtsummary").innerHTML=p[3];
+			document.getElementById("txtfacts").innerHTML=p[2];
+			if(parseFloat(p[1]) > 0.5) {
+			document.getElementById("senti").innerHTML = "Positive";
+			} else {
+			document.getElementById("senti").innerHTML = "Negative";
+			}
+		 //alert(result['response']);
+         console.log(result);
+    }});
+
+         <!-- $.getJSON("http://40.76.206.209:8080/text/" + document.getElementById("txtspeech").value, -->
+         <!-- function(data) { -->
+            <!-- alert(data);  -->
+			<!-- console.log(data);	 -->
+          <!-- });    -->
+    });
+	});
+
+		
+		
+	/*	function getText() {
+			detail = document.getElementById("txtspeech").value;
+			
+			p = details.split(":")
+			lang = p[1]
+			senti = p[2]
+			keywords_list = p[3]
+			summary = p[4].split("\"")[0]
+
+			
+			lang,senti,keywords_list,summary =  parse_response(detail)
+			//alert(detail);
+			//alert(detail);
+			document.getElementById("txtsummary").innerHTML=detail;
+			document.getElementById("txtfacts").innerHTML=detail;
+
+		}
+		function parse_response(x): {
+   
+
+			return lang, senti, keywords_list, summary
+			}
+
+*/
+	
+		</script>
+        <!-- Content -->
+        <div class="cd-hero">
+
+            <!-- Navigation -->        
+            <div class="cd-slider-nav">
+                <nav class="navbar">
+                    <div class="tm-navbar-bg">
+                        
+                        <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-flash tm-brand-icon"></i>ReWordifying India</a>
+
+                        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                            &#9776;
+                        </button>
+                        <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active selected">
+                                    <a class="nav-link" href="#0" data-no="1">Home <span class="sr-only">(current)</span></a>
+                                </li>                                
+                                </ul>
+                        </div>                        
+                    </div>
+
+                </nav>
+            </div> 
+
+            <ul class="cd-hero-slider">
+
+                <!-- Page 1 Home -->
+                <li class="selected">
+                    <div class="cd-full-width">
+                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="1">
+                            <div class="row">
+                                    <div class="tm-3-col-container">                                        
+                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner">
+                                                    <i class="fa fa-4x fa-pagelines tm-home-fa"></i>
+                                                    <h2 class="tm-text-title">Details Here</h2>                                           
+                                                    <p class="tm-text"> </p>
+													<textarea id="txtspeech" class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner"  rows="40" cols="50"></textarea>
+													<button type="button" id="btn" >Press</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner">
+                                                    <i class="fa fa-4x fa-bicycle tm-home-fa"></i>
+                                                    <h2 class="tm-text-title">Summary</h2>
+													<textarea id="txtsummary" class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner"  rows="40" cols="50"></textarea>
+                                                    <p class="tm-text" id="senti" style="background-color:powderblue; color:red;"> </p>
+													
+                                                </div>          
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner">
+                                                    <i class="fa fa-4x fa-plane tm-home-fa"></i>
+                                                    <h2 class="tm-text-title">Facts</h2>
+													<textarea id="txtfacts" class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner"  rows="40" cols="50"></textarea>
+                                                    <p class="tm-text" id="facts"> </p>
+                                                </div>          
+                                            </div>                                        
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                   
+        <script>
+
+                     
+
+</body>
+</html>
