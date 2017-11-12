@@ -9,4 +9,5 @@ TextServer.py - Flask based REST API server to expose text API.
 
 portal/index.html - Simple HTML page for demonstration
 
+input-output.doc - Sample input text(in hindi) and output summarized text and phrases (in hindi) at gendum scale 0.5
 
