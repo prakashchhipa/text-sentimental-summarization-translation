@@ -2,13 +2,13 @@
 
 import httplib, urllib
 import json
-import TextSum
+from TextSummary import *  
 from azure_translator import Translator
 
 
 accessKey = 'Text-Analysis-Aure-CognitiveService-key'
 translatorKey = 'Language-Translation-Aure-CognitiveService-key'
-
+uri = 'cognitive-service-url'
 pathPh = '/text/analytics/v2.0/keyPhrases'
 pathSenti = '/text/analytics/v2.0/sentiment'
 def GetTextDetails (msg):
