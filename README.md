@@ -27,5 +27,6 @@ Experiment: input-output.doc - Sample input text(in english) and output summariz
 Most welcome to improve the pipeline with respect to replacement of translator service and gensim utilization. Adding up more language support.
 
 **Queries?...Connect with me at:**
-LinkedIn: https://linkedin.com/in/prakash-chandra-chhipa
-Email: prakash.chandra.chhipa@gmail.com
+
+1) LinkedIn: https://linkedin.com/in/prakash-chandra-chhipa
+2) Email: prakash.chandra.chhipa@gmail.com
